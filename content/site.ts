@@ -132,9 +132,9 @@ export const about = {
   title: "The story, posted in order.",
   intro: `I'm ${person.name}, a freelance bookkeeper and accountant with ${person.yearsExperience}+ years of experience. Here's how the account was built, one entry at a time.`,
   portrait: {
-    src: "/portrait-placeholder.svg", // TODO: replace with a real portrait (e.g. /portrait.jpg)
+    src: "/portrait.jpg",
     alt: `Portrait of ${person.name}`,
-    caption: `${person.name}, ${person.city}, ${person.country}`,
+    caption: `${person.name}, ${person.city}`,
   },
   entries: [
     {
