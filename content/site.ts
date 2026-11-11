@@ -2,44 +2,49 @@
  * ─────────────────────────────────────────────────────────────────────────────
  *  SITE CONTENT — the single source of truth for every word on the site.
  *
- *  Everything in [square brackets] is a placeholder for personal details.
- *  Swap values here; no component needs to change.
+ *  Content supplied by Rahim Udin (Upwork profile + portfolio brief).
+ *  Upwork stats are as of November 2026: keep them in sync with the profile.
  *  Amounts in `ledgerEntries` are purely decorative (they drive the
  *  "Living Ledger" balance indicator) and are expressed in cents.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
 export const person = {
-  name: "[Your Name]",
-  initials: "[YN]",
-  title: "Bookkeeper",
-  city: "[City]",
-  region: "[State/Region]",
-  country: "[Country]",
-  email: "[hello@yourdomain.com]",
-  phone: "[+1 (555) 010-0000]",
-  hours: "Mon – Fri, 9:00 – 17:00 [Time zone]",
-  yearsExperience: 8, // drives copy like "[X]+ years"; keep in sync with `experience`
-  siteUrl: "https://example.com", // TODO: replace with the real domain
+  name: "Rahim Udin",
+  initials: "RU",
+  title: "Bookkeeper & Accountant",
+  city: "Gilgit-Baltistan",
+  region: "",
+  country: "Pakistan",
+  email: "solutionssmartbooks98@gmail.com",
+  phone: "+92 355 5850366",
+  hours: "Mon – Fri, 9:00 AM – 1:00 PM Eastern Time, by appointment",
+  yearsExperience: 5,
+  siteUrl: "https://rahim-udin-bookkeeper.vercel.app",
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/[your-handle]" },
-    { label: "Upwork", href: "https://www.upwork.com/freelancers/[your-handle]" },
-    { label: "Email", href: "mailto:[hello@yourdomain.com]" },
+    { label: "Upwork", href: "https://www.upwork.com/freelancers/rahim01" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/rahim-udin-ab751a24b/" },
+    { label: "WhatsApp", href: "https://wa.me/923555850366" },
+    { label: "Email", href: "mailto:solutionssmartbooks98@gmail.com" },
   ],
 } as const;
 
 export const seo = {
-  title: `${person.name}, Bookkeeper in ${person.city}`,
+  title: `${person.name} | Freelance Bookkeeper & Accountant`,
   description:
-    "Independent bookkeeping for small businesses: monthly books, payroll, reconciliations and clear financial reports, kept accurate and closed on time.",
+    "Freelance bookkeeper and accountant with 5+ years of experience and a 100% Job Success Score on Upwork. Monthly bookkeeping, reconciliations, catch-up and cleanup, AP/AR and financial reporting in QuickBooks, Xero and Zoho Books.",
   keywords: [
-    "bookkeeper",
-    "bookkeeping services",
-    "small business bookkeeping",
-    "payroll",
+    "freelance bookkeeper",
+    "remote bookkeeper",
+    "QuickBooks bookkeeper",
+    "Xero bookkeeper",
+    "Zoho Books",
+    "bookkeeping cleanup",
     "bank reconciliation",
-    "month-end close",
-    person.city,
+    "accounts payable",
+    "accounts receivable",
+    "Buildium",
+    "AppFolio",
   ],
 };
 
@@ -63,8 +68,8 @@ const drafts: EntryDraft[] = [
   { id: "about", ref: "JE-002", label: "Story brought forward", dr: 0, cr: 186_000 },
   { id: "expertise", ref: "JE-003", label: "Expertise reconciled", dr: 38_000, cr: 142_000 },
   { id: "services", ref: "JE-004", label: "Services rendered", dr: 64_000, cr: 220_000 },
-  { id: "process", ref: "JE-005", label: "Month-end close", dr: 0, cr: 196_000 },
-  { id: "experience", ref: "JE-006", label: "Prior periods", dr: 90_000, cr: 150_000 },
+  { id: "process", ref: "JE-005", label: "Engagement process", dr: 0, cr: 196_000 },
+  { id: "experience", ref: "JE-006", label: "Prior contracts", dr: 90_000, cr: 150_000 },
   { id: "results", ref: "JE-007", label: "Balance sheet", dr: 0, cr: 124_000 },
   { id: "tools", ref: "JE-008", label: "Records filed", dr: 0, cr: 48_000 },
   { id: "testimonials", ref: "JE-009", label: "Audit notes", dr: 0, cr: 62_000 },
@@ -88,74 +93,77 @@ export const preloader = {
 
 /* ── Hero ───────────────────────────────────────────────────────────────── */
 export const hero = {
-  eyebrow: `${person.name}, ${person.title}`,
+  eyebrow: `${person.name}, Freelance ${person.title}`,
   // Split into lines so the headline can stagger across the DR / CR rule.
-  headline: ["Your numbers,", "in perfect", "balance."],
-  lede: `Independent bookkeeping for small businesses in ${person.city} and beyond. Clean books every month, reconciled to the cent, with reports you can actually read.`,
-  primaryCta: { label: "Book a consultation", href: "#contact" },
-  secondaryCta: { label: "See services", href: "#services" },
+  headline: ["Reliable books.", "Clear", "decisions."],
+  lede: `I'm ${person.name}, a freelance bookkeeper and accountant with ${person.yearsExperience}+ years of experience helping businesses keep accurate, organized and up-to-date financial records, so owners understand their numbers and stay focused on running the business.`,
+  primaryCta: { label: "Let's discuss your books", href: "#contact" },
+  secondaryCta: { label: "View my services", href: "#services" },
   meta: [
-    { label: "Est.", value: "[Year]" },
-    { label: "Based in", value: person.city },
-    { label: "Accepting", value: "[2] new clients" },
+    { label: "Job Success", value: "100%" },
+    { label: "Upwork earnings", value: "$10K+" },
+    { label: "Upwork hours", value: "1,500+" },
+    { label: "Completed jobs", value: "23" },
   ],
   hint: "Move your cursor to reconcile the figures",
 };
 
 /* ── Receipt tape marquee ───────────────────────────────────────────────── */
 export const marquee = [
-  "Bookkeeping",
-  "Payroll",
+  "Monthly bookkeeping",
   "Bank reconciliation",
-  "Tax prep support",
-  "Financial reports",
+  "QuickBooks Online",
+  "Catch-up & cleanup",
+  "Xero",
   "Accounts payable",
   "Accounts receivable",
-  "Month-end close",
-  "Catch-up books",
-  "Sales tax filings",
-  "Cash-flow forecasts",
-  "Budget vs. actual",
+  "Zoho Books",
+  "Financial reporting",
+  "Chart of accounts setup",
+  "Buildium",
+  "AppFolio",
+  "Software migration",
+  "Amazon bookkeeping",
 ];
 
 /* ── About: journal entries ─────────────────────────────────────────────── */
 export const about = {
   kicker: "About",
   title: "The story, posted in order.",
-  intro: `I'm ${person.name}, an independent bookkeeper with [X]+ years of keeping small-business books honest. Here's how the account was built, one entry at a time.`,
+  intro: `I'm ${person.name}, a freelance bookkeeper and accountant with ${person.yearsExperience}+ years of experience. Here's how the account was built, one entry at a time.`,
   portrait: {
     src: "/portrait-placeholder.svg", // TODO: replace with a real portrait (e.g. /portrait.jpg)
     alt: `Portrait of ${person.name}`,
-    caption: `${person.name}, ${person.city}`,
+    caption: `${person.name}, ${person.city}, ${person.country}`,
   },
   entries: [
     {
-      date: "[2014]",
+      date: "Step 1",
       ref: "JE-101",
-      title: "First ledger, first job",
-      body: "Started as an accounts assistant at [Company], matching invoices to purchase orders and learning why every cent needs a home.",
-      highlight: "[1,200] invoices matched",
+      title: "Built a foundation in accounting",
+      body: "Studied Accounting and Finance at Karakoram International University, building a foundation in financial accounting, reporting and business finance.",
+      highlight: "Karakoram Int'l University",
     },
     {
-      date: "[2017]",
+      date: "Step 2",
       ref: "JE-102",
-      title: "Certified and specialised",
-      body: "Earned [Certification] and moved into full-cycle bookkeeping for [service businesses / retail / trades], from bank feeds to year-end packs.",
-      highlight: "[Certification]",
+      title: "Developed practical bookkeeping experience",
+      body: "Over five-plus years, built hands-on experience supporting bookkeeping and accounting work for a wide range of business needs.",
+      highlight: "5+ years",
     },
     {
-      date: "[2020]",
+      date: "Step 3",
       ref: "JE-103",
-      title: "Opened my own books",
-      body: `Went independent in ${person.city} to give small-business owners the attention a big firm can't: one bookkeeper who knows their numbers by name.`,
-      highlight: "[0] → [40] clients",
+      title: "Expanded across accounting platforms",
+      body: "Gained working experience with QuickBooks, Xero, Zoho Books, Wave, Buildium, AppFolio and Excel, and earned certifications in six of them.",
+      highlight: "6 certifications",
     },
     {
-      date: "[2024]",
+      date: "Step 4",
       ref: "JE-104",
-      title: "Advisory, not just entries",
-      body: "Added monthly reporting calls and cash-flow forecasts, so clients use their books to decide, not just to file.",
-      highlight: "[4,200] hours saved",
+      title: "Supporting clients remotely",
+      body: "Through freelance engagements, supporting clients with bookkeeping, cleanup, reconciliations, software setup and reporting across the USA, UK, Canada and other international markets.",
+      highlight: "100% Job Success",
     },
   ],
 };
@@ -169,41 +177,43 @@ export const expertise = {
   accounts: [
     {
       code: "1010",
-      title: "Reconciliations",
-      covers: ["Bank & credit cards", "Merchant & payment apps", "Loan schedules"],
-      delivers: ["Statements that tie out", "Duplicates caught early", "Audit-ready trail"],
-      proficiency: 98,
+      title: "Bookkeeping & reconciliation",
+      covers: ["Transaction categorization", "Bank & credit-card reconciliations", "Month-end organization"],
+      delivers: ["Accounts that tie out", "Accurate, current records", "A clean month-end"],
+      proficiency: 100,
       details:
-        "Every account reconciled monthly to the statement balance, with uncleared items explained, not hidden in suspense.",
-      tools: ["[QuickBooks Online]", "[Xero]", "[Dext]"],
+        "Every transaction categorized and every bank and credit-card account reconciled, so your records stay accurate month after month.",
+      tools: ["QuickBooks Online", "Xero", "Zoho Books"],
     },
     {
-      code: "2100",
-      title: "Payroll",
-      covers: ["Pay runs & timesheets", "Contractor payments", "Filings & year-end forms"],
-      delivers: ["Staff paid on time", "Liabilities on the books", "No late-filing fees"],
-      proficiency: 94,
+      code: "1500",
+      title: "QuickBooks & accounting software",
+      covers: ["QuickBooks Online & Desktop", "Xero & Zoho Books", "Setup, integrations & migrations"],
+      delivers: ["A file set up properly", "A tidy chart of accounts", "No lost history in a move"],
+      proficiency: 100,
       details:
-        "Weekly, bi-weekly or monthly runs with deductions posted correctly and payroll liabilities reconciled every period.",
-      tools: ["[Gusto]", "[ADP]", "[Payroll module]"],
+        "QuickBooks Level II certified, with hands-on work setting up new files, connecting integrations and migrating businesses between platforms.",
+      tools: ["QuickBooks", "Xero", "Zoho Books", "Wave"],
+    },
+    {
+      code: "2000",
+      title: "Accounts payable & receivable",
+      covers: ["Supplier bill tracking", "Customer invoicing", "Payment records"],
+      delivers: ["Bills paid on time", "Invoices that get chased", "Clear outstanding balances"],
+      proficiency: 100,
+      details:
+        "Supplier bills and customer invoices tracked in one place, with outstanding balances monitored so nothing slips through.",
+      tools: ["QuickBooks Online", "Xero", "Buildium", "AppFolio"],
     },
     {
       code: "3200",
-      title: "Financial reporting",
-      covers: ["P&L and balance sheet", "Cash-flow statement", "Budget vs. actual"],
-      delivers: ["A one-page monthly pack", "Trends in plain English", "Numbers lenders trust"],
-      proficiency: 96,
-      details: "Reports land by the [5th] business day of each month, with a short written summary of what moved and why.",
-      tools: ["[Fathom]", "[Excel / Sheets]", "[Spotlight]"],
-    },
-    {
-      code: "4400",
-      title: "Clean-up & catch-up",
-      covers: ["Months (or years) behind", "Messy chart of accounts", "Prior bookkeeper hand-offs"],
-      delivers: ["Current, accurate books", "A tidy chart of accounts", "Tax season without panic"],
-      proficiency: 92,
-      details: "A fixed-scope project to rebuild history, correct miscodings and leave you with a system that stays clean.",
-      tools: ["[QuickBooks Online]", "[Xero]", "[Hubdoc]"],
+      title: "Cleanup & financial reporting",
+      covers: ["Catch-up bookkeeping", "Correcting miscategorizations", "P&L, balance sheet & cash flow"],
+      delivers: ["Books brought current", "Reports you can read", "Numbers you can decide with"],
+      proficiency: 100,
+      details:
+        "Historical transactions reviewed and corrected, then Profit & Loss, Balance Sheet and cash-flow reports prepared from books you can trust.",
+      tools: ["QuickBooks Online", "Xero", "Excel"],
     },
   ],
 };
@@ -212,169 +222,226 @@ export const expertise = {
 export const services = {
   kicker: "Services",
   title: "Itemised, so there are no surprises.",
-  intro: "Fixed monthly pricing, agreed up front. Every engagement starts with a free consultation.",
+  intro:
+    "Starting prices for each package. The final quote depends on your transaction volume, number of accounts and complexity, and is agreed before work starts. Hourly work from $20/hour.",
   items: [
     {
       id: "monthly",
       name: "Monthly Bookkeeping",
-      description: "Your books, kept current and closed every month.",
-      lines: [
-        "Transaction categorisation",
-        "Bank & card reconciliations",
-        "Monthly P&L + balance sheet",
-        "Receipt capture setup",
-      ],
-      price: "[$450]",
+      description: "Your books, kept current every month.",
+      lines: ["Transaction categorization", "Bank reconciliation", "Monthly financial reports"],
+      price: "from $250",
       cadence: "/ month",
-      amount: 45_000,
-    },
-    {
-      id: "payroll",
-      name: "Payroll Management",
-      description: "Accurate pay runs and filings, every period.",
-      lines: ["Pay runs for up to [10] staff", "Contractor payments", "Payroll tax filings", "Year-end forms"],
-      price: "[$180]",
-      cadence: "/ month",
-      amount: 18_000,
+      amount: 25_000,
     },
     {
       id: "cleanup",
-      name: "Catch-up & Clean-up",
-      description: "Behind on your books? We'll bring them current.",
+      name: "Catch-Up & Cleanup",
+      description: "Behind on your books? I'll bring them current.",
       lines: [
         "Historical transaction review",
-        "Corrected chart of accounts",
-        "Reconciled opening balances",
-        "Hand-off checklist",
+        "Account reconciliations",
+        "Corrected inconsistencies",
+        "Organized records",
       ],
-      price: "[$900]",
-      cadence: "one-off",
-      amount: 90_000,
+      price: "from $350",
+      cadence: "/ project",
+      amount: 35_000,
     },
     {
-      id: "advisory",
-      name: "Reporting & Advisory",
-      description: "Numbers you can make decisions with.",
-      lines: ["Monthly reporting call", "Cash-flow forecast", "Budget vs. actual", "Tax-season pack for your CPA"],
-      price: "[$300]",
+      id: "apar",
+      name: "Accounts Payable & Receivable",
+      description: "Bills and invoices, tracked and organized.",
+      lines: ["Supplier bill tracking", "Customer invoicing", "Outstanding balance monitoring", "Payment records"],
+      price: "from $200",
       cadence: "/ month",
-      amount: 30_000,
+      amount: 20_000,
+    },
+    {
+      id: "reporting",
+      name: "Financial Reporting",
+      description: "A clear picture of how the business is doing.",
+      lines: ["Monthly Profit & Loss", "Monthly Balance Sheet", "Organized financial data", "Plain-English summary"],
+      price: "from $150",
+      cadence: "/ month",
+      amount: 15_000,
     },
   ],
 };
 
-/* ── Process: closing the books ─────────────────────────────────────────── */
+/* ── Process: how an engagement runs ────────────────────────────────────── */
 export const process = {
   kicker: "Process",
-  title: "Closing the books, every month.",
-  month: "[Month] [Year]",
+  title: "From first call to clean books.",
+  month: "Engagement file",
   steps: [
     {
       n: "01",
-      name: "Collect",
-      body: "Bank feeds, receipts, invoices and statements come in through one secure inbox. You snap; I sort.",
-      days: "Days 1–3",
+      name: "Discovery",
+      body: "We discuss your business, accounting software, where your bookkeeping stands today and what reporting you need.",
+      days: "First call",
     },
     {
       n: "02",
-      name: "Categorize",
-      body: "Every transaction coded to the right account, with rules set up so next month is faster.",
-      days: "Days 4–8",
+      name: "Review & setup",
+      body: "I review the available records, identify gaps, and we agree on the scope and priorities.",
+      days: "Scope agreed",
     },
     {
       n: "03",
-      name: "Reconcile",
-      body: "Each account ticked against its statement until the difference is exactly zero. No plugs, no suspense.",
-      days: "Days 9–15",
+      name: "Bookkeeping",
+      body: "I categorize transactions, reconcile accounts, organize payables and receivables, and complete the agreed work.",
+      days: "The work",
     },
     {
       n: "04",
-      name: "Report",
-      body: "Your P&L, balance sheet and cash position, delivered as a clean one-page pack.",
-      days: "Days 16–22",
-    },
-    {
-      n: "05",
-      name: "Advise",
-      body: "A short call to walk through what changed, what's coming, and what to do about it.",
-      days: "Days 23–30",
+      name: "Reporting & handover",
+      body: "I share the completed work and reports, explain the key items, and we agree on any next steps.",
+      days: "Handover",
     },
   ],
 };
 
-/* ── Experience: general ledger ─────────────────────────────────────────── */
+/* ── Experience: selected Upwork contracts ──────────────────────────────── */
+type Contract = {
+  fy: string;
+  period: string;
+  role: string;
+  org: string;
+  /** Hours logged on Upwork; null for fixed-price / project contracts. */
+  hours: number | null;
+  responsibilities: string[];
+  achievements: string[];
+};
+
+const contracts: Contract[] = [
+  {
+    fy: "Upwork · 2025 – 2026",
+    period: "Oct 2025 – Nov 2026",
+    role: "Bookkeeping",
+    org: "Eric Breuer Designs, LLC · Hourly contract",
+    hours: 426,
+    responsibilities: ["Ongoing bookkeeping over a 13-month engagement"],
+    achievements: ["5.0 client rating", "$2,122.50 billed", "“He was great working with.”"],
+  },
+  {
+    fy: "Upwork · 2026",
+    period: "Mar – Sep 2026",
+    role: "QuickBooks & weekly bookkeeping",
+    org: "Upwork client · Hourly contract",
+    hours: 270,
+    responsibilities: ["Weekly bookkeeping in QuickBooks over six months"],
+    achievements: ["5.0 client rating", "$2,700 billed"],
+  },
+  {
+    fy: "Upwork · 2026",
+    period: "Jul – Aug 2026",
+    role: "QuickBooks Online expert: integrations, cleanup & P&Ls",
+    org: "Upwork client · Urgent hourly contract",
+    hours: 15,
+    responsibilities: ["QuickBooks Online integrations", "Cleanup of the books", "Profit & Loss reports"],
+    achievements: ["5.0 client rating", "Delivered in two weeks"],
+  },
+  {
+    fy: "Upwork · 2026",
+    period: "Jul 2026",
+    role: "QuickBooks bookkeeping & accounting",
+    org: "Upwork client · Fixed-price contract",
+    hours: null,
+    responsibilities: ["Bookkeeping and accounting in QuickBooks"],
+    achievements: ["5.0 client rating", "$650 fixed price"],
+  },
+  {
+    fy: "Upwork · 2026",
+    period: "Mar – Apr 2026",
+    role: "Amazon bookkeeper",
+    org: "Upwork client · Hourly contract",
+    hours: 33,
+    responsibilities: ["Bookkeeping for an Amazon seller"],
+    achievements: ["5.0 client rating"],
+  },
+  {
+    fy: "Upwork · 2025 – 2026",
+    period: "Dec 2025 – Mar 2026",
+    role: "QuickBooks cleanup specialist",
+    org: "Upwork client · Hourly contract",
+    hours: 236,
+    responsibilities: ["Cleanup of QuickBooks books"],
+    achievements: ["5.0 client rating", "$2,360 billed", "Moved to a long-term contract"],
+  },
+  {
+    fy: "Upwork · 2026",
+    period: "Jan 2026",
+    role: "Buildium setup for property management",
+    org: "Upwork client · Project",
+    hours: null,
+    responsibilities: ["Buildium setup for a property management business"],
+    achievements: ["5.0 client rating", "“Great experience working with this freelancer.”"],
+  },
+  {
+    fy: "Upwork · 2025 – 2026",
+    period: "Dec 2025 – Jan 2026",
+    role: "Real estate chart of accounts setup",
+    org: "Upwork client · Urgent project",
+    hours: null,
+    responsibilities: ["Chart of accounts setup for a real estate business"],
+    achievements: ["5.0 client rating"],
+  },
+  {
+    fy: "Upwork · 2025",
+    period: "Nov 2025",
+    role: "Xero setup & bank reconciliation, UK VAT e-commerce",
+    org: "Upwork client · Project",
+    hours: null,
+    responsibilities: ["Xero setup for a VAT-registered UK e-commerce business", "One month of bank reconciliation"],
+    achievements: ["5.0 client rating", "“Brilliant work done by Rahim, absolutely top-tier performance!”"],
+  },
+  {
+    fy: "Upwork · 2025",
+    period: "Feb – Mar 2025",
+    role: "Migration from Xero to Zoho Books",
+    org: "Upwork client · Project",
+    hours: null,
+    responsibilities: ["Migrating a business from Xero to Zoho Books"],
+    achievements: ["5.0 client rating"],
+  },
+];
+
 export const experience = {
   kicker: "Experience",
   title: "The general ledger of a career.",
-  runningLabel: "Years brought forward",
-  roles: [
-    {
-      fy: "FY [2024] – Present",
-      period: "[2020] – Present",
-      role: "Independent Bookkeeper",
-      org: `${person.name} Bookkeeping`,
-      years: 3.5,
-      responsibilities: [
-        "Full-cycle bookkeeping for [40]+ small businesses",
-        "Monthly close, reporting packs and advisory calls",
-        "Payroll for [15] clients, including year-end filings",
-      ],
-      achievements: ["[100]% of client books closed by day [10]", "Grew to [X] clients by referral only"],
-    },
-    {
-      fy: "FY [2019]",
-      period: "[2017] – [2020]",
-      role: "Senior Bookkeeper",
-      org: "[Accounting Firm]",
-      years: 2.5,
-      responsibilities: [
-        "Managed a portfolio of [25] client files",
-        "Reviewed junior staff reconciliations",
-        "Prepared year-end packs for the tax team",
-      ],
-      achievements: ["Cut month-end close from [12] to [6] days", "Led migration of [30] clients to cloud software"],
-    },
-    {
-      fy: "FY [2016]",
-      period: "[2014] – [2017]",
-      role: "Accounts Assistant",
-      org: "[Company]",
-      years: 2,
-      responsibilities: [
-        "Accounts payable and receivable processing",
-        "Supplier statement reconciliations",
-        "Petty cash and expense reports",
-      ],
-      achievements: ["Recovered [$12k] in duplicate supplier payments"],
-    },
-  ],
+  runningLabel: "Hours brought forward",
+  columnLabel: "Hours",
+  unit: "hrs",
+  fixedLabel: "Project",
+  roles: contracts,
 };
 
 /* ── Results: balance sheet ─────────────────────────────────────────────── */
 export const results = {
   kicker: "Results",
   title: "The balance sheet.",
-  asOf: "As of [Month Year]",
+  asOf: "As of November 2026",
   // Each side's `total` is rendered with a double underline.
   assets: {
-    heading: "What clients gain",
+    heading: "On Upwork",
     rows: [
-      { label: "Clients served", value: 120, suffix: "+", decimals: 0 },
-      { label: "Hours saved for owners", value: 4200, suffix: "", decimals: 0 },
-      { label: "Transactions reconciled", value: 186000, suffix: "", decimals: 0 },
+      { label: "Completed jobs", value: 23, suffix: "", decimals: 0 },
+      { label: "Hours worked", value: 1500, suffix: "+", decimals: 0 },
+      { label: "Earned", value: 10, prefix: "$", suffix: "K+", decimals: 0 },
     ],
-    total: { label: "Books closed on time", value: 99.8, suffix: "%", decimals: 1 },
+    total: { label: "Job Success Score", value: 100, suffix: "%", decimals: 0 },
   },
   equity: {
     heading: "What it's built on",
     rows: [
-      { label: "Years of experience", value: 8, suffix: "+", decimals: 0 },
-      { label: "Certifications held", value: 3, suffix: "", decimals: 0 },
-      { label: "Client retention", value: 96, suffix: "%", decimals: 0 },
+      { label: "Years of experience", value: 5, suffix: "+", decimals: 0 },
+      { label: "Certifications held", value: 6, suffix: "", decimals: 0 },
+      { label: "Accounting platforms", value: 8, suffix: "", decimals: 0 },
     ],
-    total: { label: "Reconciliation accuracy", value: 99.9, suffix: "%", decimals: 1 },
+    total: { label: "Client rating", value: 5, suffix: " / 5", decimals: 1 },
   },
-  footnote: "All figures are placeholders: replace with your own verified numbers.",
+  footnote: "Upwork figures as shown on Rahim's profile. The 5.0 rating is the score on each contract listed above.",
 };
 
 /* ── Tools & certifications: filing cabinet ─────────────────────────────── */
@@ -385,19 +452,25 @@ export const tools = {
     {
       label: "Software",
       folders: [
-        { name: "[QuickBooks Online]", note: "Advanced user" },
-        { name: "[Xero]", note: "Certified advisor" },
-        { name: "[Gusto]", note: "Payroll" },
-        { name: "[Dext]", note: "Receipt capture" },
-        { name: "[Excel / Sheets]", note: "Models & forecasts" },
+        { name: "QuickBooks Online", note: "Level II certified" },
+        { name: "QuickBooks Desktop", note: "Desktop editions" },
+        { name: "Xero", note: "Advisor certified" },
+        { name: "Zoho Books", note: "Certified" },
+        { name: "Wave", note: "Small business" },
+        { name: "Buildium", note: "Property management" },
+        { name: "AppFolio", note: "Property management" },
+        { name: "Microsoft Excel", note: "Certified" },
       ],
     },
     {
       label: "Certifications",
       folders: [
-        { name: "[Certified Bookkeeper]", note: "[Issuing body], [Year]" },
-        { name: "[QuickBooks ProAdvisor]", note: "[Level], [Year]" },
-        { name: "[Xero Advisor]", note: "[Year]" },
+        { name: "QuickBooks Level II Certified", note: "Intuit QuickBooks" },
+        { name: "Xero Advisor Certified", note: "Udemy" },
+        { name: "Certified Microsoft Excel", note: "Microsoft Excel" },
+        { name: "Buildium Certified", note: "Buildium" },
+        { name: "AppFolio Certified", note: "AppFolio" },
+        { name: "Certified ZohoBooks", note: "ZohoBooks" },
       ],
     },
   ],
@@ -409,30 +482,40 @@ export const testimonials = {
   title: "Audit notes from clients.",
   notes: [
     {
-      quote:
-        "For the first time in [X] years I know exactly where my cash is going. The monthly pack takes me five minutes to read.",
-      name: "[Client Name]",
-      role: "[Owner, Studio / Café / Practice]",
+      quote: "Brilliant work done by Rahim, absolutely top-tier performance!",
+      name: "Upwork client",
+      role: "Xero setup & bank reconciliation, UK VAT e-commerce",
       ref: "AN-01",
     },
     {
-      quote:
-        "We were [14] months behind. Three weeks later the books were current and our CPA called them the cleanest she'd seen.",
-      name: "[Client Name]",
-      role: "[Founder, Company]",
+      quote: "Great to work with. Moved to long term contract.",
+      name: "Upwork client",
+      role: "QuickBooks cleanup specialist",
       ref: "AN-02",
     },
     {
-      quote: "Payroll used to eat my Fridays. Now it just happens, correctly, and I get my weekends back.",
-      name: "[Client Name]",
-      role: "[Director, Company]",
+      quote: "He was great working with.",
+      name: "Eric Breuer Designs, LLC",
+      role: "Bookkeeping",
       ref: "AN-03",
     },
     {
-      quote: "Responsive, precise and genuinely kind about our messy receipts shoebox. Worth every cent, and she'd know.",
-      name: "[Client Name]",
-      role: "[Owner, Trade business]",
+      quote: "Great experience working with this freelancer.",
+      name: "Upwork client",
+      role: "Buildium setup for property management",
       ref: "AN-04",
+    },
+    {
+      quote: "Wonderful to work with.",
+      name: "Upwork client",
+      role: "Bookkeeping",
+      ref: "AN-05",
+    },
+    {
+      quote: "Highly recommended.",
+      name: "Upwork client",
+      role: "Short-term project",
+      ref: "AN-06",
     },
   ],
 };
@@ -443,28 +526,28 @@ export const faq = {
   title: "Open queries, cleared.",
   items: [
     {
-      q: "Do you work with businesses outside " + person.city + "?",
-      a: "Yes. Everything runs on cloud software and secure document sharing, so I work with clients across [Country]. Calls happen over video at a time that suits you.",
+      q: "Which countries do you work with?",
+      a: "I work remotely with businesses in the USA, UK, Canada and other international markets.",
     },
     {
-      q: "Which accounting software do you use?",
-      a: "Mostly [QuickBooks Online] and [Xero]. If you're on something else, I'll either work in it or help you migrate with no lost history.",
+      q: "Which accounting software do you support?",
+      a: "QuickBooks Online and Desktop, Xero, Zoho Books, Wave, Buildium and AppFolio, plus Excel for reporting and analysis.",
     },
     {
-      q: "How is pricing set?",
-      a: "Fixed monthly fees based on transaction volume and the services you need, agreed before we start. No hourly surprises.",
+      q: "Can you clean up overdue bookkeeping?",
+      a: "Yes. I review historical records, reconcile accounts, correct categorization issues and organize the books. The quote depends on the volume and condition of the records.",
     },
     {
-      q: "My books are a mess. Can you still help?",
-      a: "That's what catch-up and clean-up projects are for. We'll scope it on the consultation call and fix it in one fixed-price project.",
+      q: "Do you provide monthly bookkeeping?",
+      a: "Yes. Monthly support can include transaction categorization, reconciliations and the financial reports we agree on.",
     },
     {
-      q: "Do you file taxes?",
-      a: "I prepare tax-ready books and a year-end pack for your CPA or tax preparer, and I'm happy to coordinate with them directly. [Adjust to your jurisdiction and scope.]",
+      q: "How do you price projects?",
+      a: "Each package has a starting price. I confirm the final quote after reviewing your transaction volume, accounts, software and scope. Hourly work starts at $20/hour.",
     },
     {
-      q: "How do I get started?",
-      a: "Send the invoice below. I'll reply within [one] business day to book a free 30-minute consultation.",
+      q: "When are you available?",
+      a: "Monday to Friday, 9:00 AM – 1:00 PM Eastern Time, by appointment. Send the invoice below or message me on WhatsApp to book a call.",
     },
   ],
 };
@@ -472,29 +555,35 @@ export const faq = {
 /* ── Contact: the invoice ───────────────────────────────────────────────── */
 export const contact = {
   kicker: "Contact",
-  title: "Start with an invoice, addressed to me.",
-  intro: "Tell me who you are and what you need. There's no charge: the amounts are illustrative monthly estimates.",
+  title: "Let's get your books organized.",
+  intro:
+    "Tell me about your business and the bookkeeping support you need. There's no charge: the amounts are starting package prices.",
   invoicePrefix: "INV",
   fromLabel: "From",
   billToLabel: "Bill to",
   lineItemsLabel: "Services requested",
   notesLabel: "Notes",
-  notesPlaceholder: "A little about your business, how many transactions a month, and where things stand today…",
+  notesPlaceholder: "A little about your business, your accounting software, how many transactions a month, and where things stand today…",
   submit: "Send",
   submitting: "Posting…",
   successTitle: "Received. The books are balanced.",
-  successBody: "Thank you. I'll reply within [one] business day to book your free consultation.",
+  successBody: "Thank you. I'll be in touch shortly to arrange a call about your books.",
   errorTitle: "That entry didn't post.",
-  errorBody: "Something went wrong sending your invoice. Please try again, or email me directly at " + person.email + ".",
+  errorBody:
+    "Something went wrong sending your invoice. Please try again, or email me directly at " +
+    person.email +
+    " or message me on WhatsApp at " +
+    person.phone +
+    ".",
 };
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 export const footer = {
-  signoff: "Let's close the books.",
+  signoff: "Accurate books. Clear reports. Confident decisions.",
   backToTop: "Rewind the tape",
   pending: "1 entry pending: send the invoice to balance the books.",
   balanced: "All entries posted. Books balanced.",
-  legal: `© ${person.name}. All rights reserved.`,
+  legal: `© ${person.name} | Freelance ${person.title}`,
 };
 
 /* ── 404 ────────────────────────────────────────────────────────────────── */

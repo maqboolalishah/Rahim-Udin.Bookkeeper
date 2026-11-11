@@ -22,7 +22,7 @@ export function Footer() {
               </InkLink>
               <p className="num text-ink-muted">{person.phone}</p>
               <p className="text-ink-muted">
-                {person.city}, {person.region}, {person.country}
+                {[person.city, person.region, person.country].filter(Boolean).join(", ")}
               </p>
               <p className="text-sm text-ink-muted">{person.hours}</p>
             </address>

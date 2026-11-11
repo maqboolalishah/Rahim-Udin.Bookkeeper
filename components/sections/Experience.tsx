@@ -40,8 +40,14 @@ function RoleRow({
             <span className="mt-1 block text-[15px] text-ink-muted">{role.org}</span>
           </span>
           <span className="num text-right text-lg" data-cursor="audit">
-            {role.years.toFixed(1)}
-            <span className="ml-1 text-xs text-ink-muted">yrs</span>
+            {role.hours === null ? (
+              <span className="text-sm text-ink-muted">{experience.fixedLabel}</span>
+            ) : (
+              <>
+                {role.hours.toLocaleString("en-US")}
+                <span className="ml-1 text-xs text-ink-muted">{experience.unit}</span>
+              </>
+            )}
           </span>
           {/* + → = */}
           <span aria-hidden className="relative hidden size-4 self-center md:block">
@@ -111,10 +117,10 @@ export function Experience() {
   const [open, setOpen] = useState<number | null>(0);
   const [balance, setBalance] = useState(0);
   const rows = useRef<Array<HTMLLIElement | null>>([]);
-  const total = experience.roles.reduce((s, r) => s + r.years, 0);
+  const total = experience.roles.reduce((s, r) => s + (r.hours ?? 0), 0);
 
   useEffect(() => {
-    const cumulative = experience.roles.map((_, i) => experience.roles.slice(0, i + 1).reduce((s, r) => s + r.years, 0));
+    const cumulative = experience.roles.map((_, i) => experience.roles.slice(0, i + 1).reduce((s, r) => s + (r.hours ?? 0), 0));
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -142,15 +148,15 @@ export function Experience() {
             <div className="sticky top-24 z-10 border border-brass bg-paper/95 p-5 backdrop-blur-sm max-lg:flex max-lg:items-baseline max-lg:justify-between">
               <p className="smallcaps !text-brass-text">{experience.runningLabel}</p>
               <p className="mt-2 font-serif text-brass-text max-lg:mt-0" data-cursor="audit">
-                <TweenNumber value={balance} className="text-[clamp(2.5rem,5vw,4.5rem)] leading-none" />
-                <span className="ml-2 text-base">yrs</span>
+                <TweenNumber value={balance} decimals={0} className="text-[clamp(2.5rem,5vw,4.5rem)] leading-none" />
+                <span className="ml-2 text-base">{experience.unit}</span>
               </p>
               <div
                 aria-hidden
                 className="mt-4 h-px origin-left bg-brass transition-transform duration-700 ease-ink max-lg:hidden"
                 style={{ transform: `scaleX(${balance / total})` }}
               />
-              <p className="num mt-2 text-xs text-ink-muted max-lg:hidden">of {total.toFixed(1)} carried forward</p>
+              <p className="num mt-2 text-xs text-ink-muted max-lg:hidden">of {total.toLocaleString("en-US")} carried forward</p>
             </div>
           </aside>
 
@@ -158,13 +164,13 @@ export function Experience() {
             <div aria-hidden className="hidden grid-cols-[9rem_1fr_6rem_2rem] gap-x-6 border-b-2 border-ink pb-2 md:grid">
               <span className="smallcaps">Period</span>
               <span className="smallcaps">Account · Role</span>
-              <span className="smallcaps text-right">Balance</span>
+              <span className="smallcaps text-right">{experience.columnLabel}</span>
               <span />
             </div>
             <ol>
               {experience.roles.map((r, i) => (
                 <RoleRow
-                  key={r.period}
+                  key={r.role}
                   role={r}
                   open={open === i}
                   onToggle={() => setOpen((o) => (o === i ? null : i))}
@@ -176,7 +182,9 @@ export function Experience() {
             </ol>
             <div className="mt-2 flex items-baseline justify-end gap-6 py-4">
               <span className="smallcaps">Total carried forward</span>
-              <span className="rule-double num text-lg">{total.toFixed(1)} yrs</span>
+              <span className="rule-double num text-lg">
+                {total.toLocaleString("en-US")} {experience.unit}
+              </span>
             </div>
           </div>
         </div>

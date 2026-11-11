@@ -3,7 +3,7 @@ import { LedgerSection } from "@/components/motion/LedgerSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Odometer } from "@/components/ui/Odometer";
 
-type Row = { label: string; value: number; suffix: string; decimals: number };
+type Row = { label: string; value: number; suffix: string; decimals: number; prefix?: string };
 
 function Side({ heading, rows, total, side }: { heading: string; rows: readonly Row[]; total: Row; side: "l" | "r" }) {
   return (
@@ -19,7 +19,7 @@ function Side({ heading, rows, total, side }: { heading: string; rows: readonly 
             <dt className="text-[15px] md:text-base">{r.label}</dt>
             <span aria-hidden className="flex-1 translate-y-[-4px] border-b border-dotted border-ink/25" />
             <dd className="text-[clamp(1.5rem,3vw,2.25rem)] leading-none">
-              <Odometer value={r.value} decimals={r.decimals} suffix={r.suffix} />
+              <Odometer value={r.value} decimals={r.decimals} prefix={r.prefix} suffix={r.suffix} />
             </dd>
           </div>
         ))}
@@ -29,7 +29,7 @@ function Side({ heading, rows, total, side }: { heading: string; rows: readonly 
           <dt className="font-serif text-xl italic md:text-2xl">{total.label}</dt>
           <span aria-hidden className="flex-1" />
           <dd className="relative pb-2 text-[clamp(2.25rem,5vw,3.75rem)] leading-none text-green">
-            <Odometer value={total.value} decimals={total.decimals} suffix={total.suffix} />
+            <Odometer value={total.value} decimals={total.decimals} prefix={total.prefix} suffix={total.suffix} />
             <span aria-hidden className="absolute inset-x-0 bottom-0 flex flex-col gap-[3px]">
               <span className="h-px origin-left bg-green draw-x" style={{ "--i": 20 } as React.CSSProperties} />
               <span className="h-px origin-left bg-green draw-x" style={{ "--i": 23 } as React.CSSProperties} />

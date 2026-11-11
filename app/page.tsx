@@ -21,7 +21,7 @@ const jsonLd = {
     {
       "@type": "AccountingService",
       "@id": `${person.siteUrl}/#business`,
-      name: `${person.name}, Bookkeeper`,
+      name: `${person.name}, ${person.title}`,
       description: seo.description,
       url: person.siteUrl,
       email: person.email,
@@ -29,10 +29,10 @@ const jsonLd = {
       address: {
         "@type": "PostalAddress",
         addressLocality: person.city,
-        addressRegion: person.region,
+        ...(person.region ? { addressRegion: person.region } : {}),
         addressCountry: person.country,
       },
-      areaServed: person.country,
+      areaServed: ["United States", "United Kingdom", "Canada", person.country],
       founder: { "@type": "Person", name: person.name, jobTitle: person.title },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
