@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9d3c2"/><stop offset="1" stop-color="#bfb7a2"/>
+    </linearGradient>
+    <pattern id="rule" width="480" height="24" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="23.5" x2="480" y2="23.5" stroke="#a9b8b0" stroke-opacity=".35"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+  <rect width="480" height="600" fill="url(#rule)"/>
+  <circle cx="240" cy="236" r="92" fill="#1f4d3a" fill-opacity=".18"/>
+  <path d="M86 600c10-118 74-188 154-188s144 70 154 188z" fill="#1f4d3a" fill-opacity=".18"/>
+  <text x="240" y="560" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="15" letter-spacing="3" fill="#4a544f">[ YOUR PHOTO ]</text>
+</svg>
